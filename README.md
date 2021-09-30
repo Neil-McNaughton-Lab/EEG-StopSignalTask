@@ -1,8 +1,8 @@
-# Stop Signal Task - fMRI
+# Stop Signal Task - EEG version
 ## Overview:
 Welcome! This is Professor Neil McNaughton's Lab's Stop Signal Task (SST) 
 experiment (see the below figure). This SST was created with the intention of 
-being used in conjunction with functional magnetic resonance imaging (fMRI). 
+being used in conjunction with an electroencephalogram (EEG). 
 
 As is standard with SSTs this task can be broken into two types of trials: 
 go trials and stop trials. A single go trial our SST consists of the 
