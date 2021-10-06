@@ -28,6 +28,7 @@ the onset of the stimuli and the stop sound, known as the stop signal delay
     output triggers.
 </p>
 
+
 ## Installation:
 The SST is has been created in [PsychoPy3](https://www.psychopy.org/) 
 and requires [PsychoPy3 2021.1.3](https://github.com/psychopy/psychopy/releases) 
@@ -96,7 +97,8 @@ untick the `Enable Escape key` tick box in under the __Basic__ tab (see
 Figure 3). Likewise, to disable the escape key you will need to go into the 
 `experiment settings` and untick the `Full-screen window` tick box in under the 
 __Screen__ tab (see Figure 3).
-![Change parraellel port](doc/figures/change_parrallel_port.png?raw=true "Change parraellel port")
+
+![DisableFSandESC](doc/figures/DisableFSandESC.png?raw=true "Disable Fullscreen and ESC key")
 <p align="center" style="font-size:10px">
     Figure 3<br />  
     Menus to traverse in order to disable the Escape key and/or enable full 
