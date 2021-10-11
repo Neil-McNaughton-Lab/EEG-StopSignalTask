@@ -4,12 +4,12 @@ Stop Signal Task (SST) written in PsychoPy for Niel McNorton’s lab in 2021
 using the PsychoPy builder API. Its purpose is to illustrate where in the SST 
 (Figures 1 (a) & (b)) the settings and code for each element of the flow chart 
 (Figure 1 (c)) can be found. For information on the behaviour of the SST see 
-the [ReadMe of this repository](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask) 
-or [Appendix A](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Appendix-A---SST-task-overview). 
+the [ReadMe of this repository](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask) 
+or [Appendix A](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Appendix-A---SST-task-overview). 
 
 
 ------------------
-![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/main/doc/figures/fullsetup.png)
+![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/EEG-StopSignalTask/main/doc/figures/fullsetup.png)
 <p align="center" style="font-size:5px">
     Figure 1<br />  
     (a) The PsychoPy Builder interface. (b) An expanded flow chart map which 
@@ -22,20 +22,31 @@ or [Appendix A](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/
 ## Task Steps:
 In Figure 1 (c) there are seven steps in a single loop of the task which have 
 been labelled 1 through to 7 respectively. These steps consist of: 
-1. [Sequence preparation](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Sequence-Preparation)
-2. [Subject attention focus circle](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Focus-Circle)
-3. [Stimulus display](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Stimulus-Display)
-4. [Variable inter stimulus interval](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Inter-Stimulus-Interval)
-5. [Feedback display](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Feedback-Display)
-6. [Variable inter trial interval](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Variable-Inter-Trial-Interval)
+1. [Sequence preparation](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Sequence-Preparation)
+2. [Subject attention focus circle](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Focus-Circle)
+3. [Stimulus display](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Stimulus-Display)
+4. [Variable inter stimulus interval](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Inter-Stimulus-Interval)
+5. [Feedback display](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Feedback-Display)
+6. [Variable inter trial interval](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Variable-Inter-Trial-Interval)
 
-Additionally, I will also discuss the external functions ([subject GUI](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Subject-Information-GUI) and [sound testing script](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Test-Sound-(PsychoPy-Script))) called prior to the sequence shown in Figure 1 and the conditions file (which is used to determine the number of blocks in a task, the trail types present in each block, and the ratio of left to right arrows present in each block).
+Additionally, I will also discuss the external functions 
+([subject GUI](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Subject-Information-GUI) 
+and [sound testing script](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Test-Sound-(PsychoPy-Script))) 
+called prior to the sequence shown in Figure 1 and the conditions file (which 
+is used to determine the number of blocks in a task, the trail types present in 
+each block, and the ratio of left to right arrows present in each block).
 
 ## Structuring:
-Finally, and of some import, is the structure naming convention I use in this document. The PsychoPy Builder structures tasks in three levels: Routines, Components, and Properties (see Figure 2). When referring to a specific level I will use the following syntax: 'Routine' -> "Component" -> ‘”Property”’. I chose this syntax over the standard folder path syntax to ensure uniqueness. A brief description of level is given below, but for our purposes you just need to know where they’re located in the Builder. 
+Finally, and of some import, is the structure naming convention I use in this 
+document. The PsychoPy Builder structures tasks in three levels: Routines, 
+Components, and Properties (see Figure 2). When referring to a specific level 
+I will use the following syntax: 'Routine' -> "Component" -> ‘”Property”’. I 
+chose this syntax over the standard folder path syntax to ensure uniqueness. A 
+brief description of level is given below, but for our purposes you just need 
+to know where they’re located in the Builder. 
 
 ------------------
-![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/main/doc/figures/builder_codeblock.png)
+![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/EEG-StopSignalTask/main/doc/figures/builder_codeblock.png)
 <p align="center" style="font-size:10px">
     Figure 2<br />  
     An illustration of the location of the Routines, Components, and 
@@ -69,16 +80,18 @@ PsychoPy Builder is: 'Routine' -> "Component" -> ‘”Property”’.
 ===============================================================================
 ===============================================================================
 # Psychopy Builder Functions
-There are seven steps in a single loop of the Stop Signal Task (SST) which have been labelled 1 through to 7 respectively. These steps, also shown in Figure 1 below, consist of: 
-1. [Sequence preparation](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Sequence-Preparation)
-2. [Subject attention focus circle](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Focus-Circle)
-3. [Stimulus display](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Stimulus-Display)
-4. [Variable inter stimulus interval](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Inter-Stimulus-Interval)
-5. [Feedback display](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Feedback-Display)
-6. [Variable inter trial interval](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki/Variable-Inter-Trial-Interval)
+There are seven steps in a single loop of the Stop Signal Task (SST) which have 
+been labelled 1 through to 7 respectively. These steps, also shown in Figure 1 
+below, consist of: 
+1. [Sequence preparation](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Sequence-Preparation)
+2. [Subject attention focus circle](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Focus-Circle)
+3. [Stimulus display](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Stimulus-Display)
+4. [Variable inter stimulus interval](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Inter-Stimulus-Interval)
+5. [Feedback display](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Feedback-Display)
+6. [Variable inter trial interval](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki/Variable-Inter-Trial-Interval)
 
 ------------------
-![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/main/doc/figures/fullsetup.png)
+![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/EEG-StopSignalTask/main/doc/figures/fullsetup.png)
 <p align="center" style="font-size:5px">
     Figure 1<br />  
     (a) The PsychoPy Builder interface. (b) An expanded flow chart map which 
@@ -488,7 +501,7 @@ using *t(x) ∈ [0.5, 4]* s,  *ITIfactor = 125* ms, and,
 *meanITItime = 1000* ms.
 
 ------------------
-![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/main/doc/figures/ISIvalues.png)
+![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/EEG-StopSignalTask/main/doc/figures/ISIvalues.png)
 <p align="center" style="font-size:5px">
     Figure 3<br />  
     A “typical” sample set of the logarithmic function used to determine our 
@@ -535,6 +548,51 @@ above.
 
 
 
+===============================================================================
+===============================================================================
+===============================================================================
+### 1.7 – Parallel Port Triggers:
+This section serves to give the user some idea where to find the parallel port 
+implementation within SST task within the PsychoPy Builder UI.
+
+
+#### Builder implementation:
+The builder Components used for each parallel port trigger are located under 
+the following Routines:
+  - `  1` 'countdown' -> "block_port"
+  - `  2` 'standby' -> "focus_port" 
+  - `  4` 'go_stim' -> "gostim_port"
+  - ` 16` 'go_feedback' -> "go_press_port"
+  - ` 32` 'go_feedback' -> "go_fb_port" 
+  - `  4` 'stop_stim' -> "stopstim_port"
+  - `  8` 'stop_stim' -> "sound_port"
+  - ` 16` 'stop_feedback' -> "stop_press_port"
+  - ` 32` 'stop_feedback' -> "stop_fb_port" 
+  - ` 64` 'ITI' -> "ITI_port"
+  - `128` 'End' -> "end_port" 
+
+Under each Parallel Port Component you will find a list of available addresses 
+under __Port Address__ located within the Hardware tab. 
+
+#### Changing the Port Address you are using:
+As stated above, if you want to change which parallel port a Component outputs 
+to you can find the list of avalible addresses under __Port Address__ located 
+within the Hardware tab. However, if your address isn't located there you will 
+need to add it to PsychoPy's list of addresses under system preferences (yes, 
+it is this unnecessarily complicated). To add your address to the list go to 
+__File__ -> __preferences__, see Figure 2. Then, once your in 
+`Psychopy Preferences` go to the __Hardware__ tab and add your address to the 
+list of__parraell ports__. Click `Apply`, save the experiment, and then 
+(becuase the ports don't update immediately) close and reopen it.
+
+![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/EEG-StopSignalTask/main/doc/figures/change_parrallel_port.png)
+<p align="center" style="font-size:10px">
+    Figure 2<br />  
+    Menus you will need to navigate in order to add a new parrallel port to 
+    PsychoPy's list of available ports.
+</p>
+
+
 
 
 
@@ -544,7 +602,7 @@ above.
 ## Section 2 - Pre-Sequence Functions
 #External Python Functions
 Some functions aren't shown in the flow chart at the beginning of 
-[this wiki](https://github.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/wiki). 
+[this wiki](https://github.com/Neil-McNaughton-Lab/EEG-StopSignalTask/wiki). 
 This is because they are called before the builder's sequence is started. 
 Presently there are only two such functions: 
   - The GUI used to gather subject information
@@ -571,7 +629,7 @@ tick box which allows the user to indicate whether or not they would like to
 load the sound settings interface, see section 2.2.
 
 ------------------
-![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/fMRI-StopSignalTask/main/doc/figures/GUI.png)
+![](https://raw.githubusercontent.com/Neil-McNaughton-Lab/EEG-StopSignalTask/main/doc/figures/GUI.png)
 <p align="center" style="font-size:5px">
     Figure 4<br />  
     An screenshot of the participant details GUI.
