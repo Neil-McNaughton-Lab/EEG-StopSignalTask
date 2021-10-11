@@ -67,7 +67,7 @@ have to do so manually unfortunately. This is becuase Psychopy Builder
 doesn't allow for all parrael port calls to be changed simultaneously. 
 *I'm working on a work around for this, but for now it works.*
 
-To change the port you must go into the each `_port` item in the 'countdown', 
+To change the port you must go into the each `_port` item in the 'countdown',
 'standby', 'go_stim', 'go_feedback', 'stop_stim' , 'stop_feedback', 'ITI', and 
 'End' routines in the builder. From there you will find a list of available 
 addresses under  __Port Address__ located within the Hardware tab. 
@@ -104,6 +104,8 @@ __Screen__ tab (see Figure 3).
     Menus to traverse in order to disable the Escape key and/or enable full 
     screen.
 </p>
+
+
 
 
 
