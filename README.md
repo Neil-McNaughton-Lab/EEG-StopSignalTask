@@ -106,3 +106,20 @@ __Screen__ tab (see Figure 3).
     Menus to traverse in order to disable the Escape key and/or enable full 
     screen.
 </p>
+
+
+## Troubleshooting:
+If you run into troubles the PsychoPy Runner screen displays the script Python 
+outputs. This is useful for certain errors. Such as the 
+```python
+.
+.
+.
+    block_port = parallel.ParallelPort(address='0xD010')
+TypeError: 'NoneType' object is not callable
+```` 
+which comes up if you run this experiment of a PC that doesn't have a parallel 
+port driver installed.
+
+
+
